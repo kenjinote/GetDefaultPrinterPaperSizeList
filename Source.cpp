@@ -27,7 +27,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			if (GetDefaultPrinter(szDefaultPrinter, &dwSize))
 			{
 				const int count = DeviceCapabilities(szDefaultPrinter, NULL, DC_PAPERNAMES, NULL, NULL);
-				if (count)
+				if (count > 0)
 				{
 					// 用紙名
 					LPTSTR pszNames = new TCHAR[count * 64];
